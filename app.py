@@ -11,7 +11,7 @@ database.init_db()
 st.set_page_config(page_title="Smart Receipt Processor", page_icon="🧾", layout="wide")
 
 st.title("🧾 Smart Receipt & Invoice Processor")
-st.subheader("Powered by Cloud AI & Low-Code")
+st.subheader("Automated Expense & Invoice Management System")
 
 # Sidebar for API Key
 st.sidebar.header("Configuration")
