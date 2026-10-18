@@ -42,6 +42,16 @@ with tab1:
                 if not api_key:
                     st.error("Please enter your Gemini API Key in the sidebar!")
                 else:
+                    # Optional Cloud Storage Integration (AWS S3 simulation/upload)
+                    try:
+                        import aws_s3
+                        with st.spinner("Archiving receipt to AWS S3 Cloud Storage..."):
+                            s3_url = aws_s3.upload_file_to_s3(temp_path)
+                            if s3_url:
+                                st.success("Archived to AWS S3 successfully!")
+                    except Exception:
+                        pass # Continues smoothly even if S3 keys aren't set up yet
+
                     # Import ai_processor dynamically inside button click to prevent startup lags
                     import ai_processor
                     with st.spinner("Analyzing receipt with Cloud AI..."):
