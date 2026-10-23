@@ -25,7 +25,7 @@ def extract_receipt_details(image_path, api_key):
     """
 
     response = client.models.generate_content(
-        model="gemini-flash-latest",
+        model="gemini-1.5-flash",
         contents=[img, prompt],
         config=types.GenerateContentConfig(
             response_mime_type="application/json"
